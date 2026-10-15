@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الشروط والأحكام — استشِرني</title>
+<meta name="description" content="الشروط والأحكام الخاصة باستخدام منصة استشِرني لخدمات الاستشارات النفسية والمهنية أونلاين.">
+<link rel="icon" type="image/png" href="https://i.postimg.cc/BbtD3P0j/Gemini-Generated-Image-u4tgiau4tgiau4tg.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { cairo: ['Cairo', 'sans-serif'] },
+      colors: {
+        primary: {50:'#F5F3FF',100:'#EDE9FE',200:'#DDD6FE',300:'#C4B5FD',400:'#A78BFA',500:'#8B5CF6',600:'#7C3AED',700:'#6D28D9',800:'#5B21B6',900:'#4C1D95'},
+        gold: {300:'#FCD34D',400:'#FBBF24',500:'#F59E0B',600:'#D97706'}
+      },
+      boxShadow: {
+        soft: '0 8px 30px rgba(76,29,149,.08)',
+        lift: '0 24px 50px -12px rgba(76,29,149,.22)'
+      }
+    }}
+  }
+</script>
+
+<style>
+  html{scroll-behavior:smooth}
+  body{overflow-x:hidden}
+  ::selection{background:#7C3AED;color:#fff}
+  .brand-gradient{background-image:linear-gradient(135deg,#7C3AED 0%,#2563EB 100%)}
+  .hero-gradient{background-image:linear-gradient(150deg,#4C1D95 0%,#6D28D9 38%,#2563EB 100%)}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+  .reveal.is-visible{opacity:1;transform:none}
+</style>
+</head>
+
+<body class="font-cairo text-slate-800 bg-white antialiased" x-data="{ showTop: false }"
+      @scroll.window="showTop = window.scrollY > 600">
+
+<!-- ══════════ شريط التنقل ══════════ -->
+<nav class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+     x-data="{ scrolled: false }"
+     @scroll.window="scrolled = window.scrollY > 40"
+     :class="scrolled ? 'bg-white/90 backdrop-blur-md shadow-soft py-3' : 'bg-transparent py-5'">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <span class="bg-white rounded-2xl p-1 shadow-md ring-1 ring-slate-200 shrink-0">
+        <img src="https://i.postimg.cc/BbtD3P0j/Gemini-Generated-Image-u4tgiau4tgiau4tg.jpg" alt="لوغو استشِرني" class="w-12 h-12 object-contain rounded-xl">
+      </span>
+      <span class="text-2xl font-black tracking-tight"
+            :class="scrolled ? 'bg-clip-text text-transparent brand-gradient' : 'text-white'">استشِرني</span>
+    </a>
+    <div class="hidden lg:flex items-center gap-8 font-bold text-sm">
+      <a href="index.html" class="transition-colors" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">الرئيسية</a>
+      <a href="index.html#services" class="transition-colors" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">الخدمات</a>
+      <a href="index.html#how" class="transition-colors" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">كيف نعمل</a>
+      <a href="index.html#testimonials" class="transition-colors" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">آراء العملاء</a>
+      <a href="index.html#pricing" class="transition-colors" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">الأسعار</a>
+    </div>
+    <a href="index.html#booking" class="hidden sm:inline-flex brand-gradient text-white text-sm font-bold px-6 py-2.5 rounded-xl shadow-lg shadow-violet-950/30 ring-1 ring-white/40 hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300">
+      احجز جلستك
+    </a>
+  </div>
+</nav>
+
+<!-- ══════════ ترويسة الصفحة ══════════ -->
+<header class="relative hero-gradient">
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white/10 blur-3xl"></div>
+    <div class="absolute -bottom-28 -right-16 w-80 h-80 rounded-full bg-gold-400/15 blur-3xl"></div>
+  </div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-20 text-center">
+    <nav class="flex items-center justify-center gap-2 text-sm font-bold text-violet-200" aria-label="مسار التنقل">
+      <a href="index.html" class="hover:text-white transition-colors">الرئيسية</a>
+      <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg>
+      <span class="text-white">الشروط والأحكام</span>
+    </nav>
+    <div class="mt-6 mx-auto w-20 h-20 bg-white rounded-3xl p-1.5 shadow-xl ring-1 ring-white/40">
+      <img src="https://i.postimg.cc/BbtD3P0j/Gemini-Generated-Image-u4tgiau4tgiau4tg.jpg" alt="لوغو استشِرني" class="w-full h-full object-contain rounded-2xl">
+    </div>
+    <h1 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-black text-white">الشروط والأحكام</h1>
+    <p class="mt-4 text-lg text-violet-100/90 max-w-2xl mx-auto leading-9">القواعد التي تنظّم استخدامك لمنصة استشِرني وخدماتها — مكتوبة بلغة واضحة، لأن الثقة تبدأ بالشفافية.</p>
+    <span class="mt-6 inline-flex items-center gap-2 bg-white/10 ring-1 ring-white/25 backdrop-blur text-violet-100 text-sm font-bold px-4 py-2 rounded-full">
+      <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      آخر تحديث: ديسمبر 2025
+    </span>
+  </div>
+</header>
+
+<!-- ══════════ محتوى الشروط ══════════ -->
+<main class="bg-gray-50 py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
+
+    <!-- 1 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">1</span>
+        <h2 class="text-2xl font-black text-slate-900">قبول الشروط</h2>
+      </div>
+      <div class="text-slate-600 leading-9 space-y-3">
+        <p>مرحباً بك في منصة <strong>استشِرني</strong>. يُرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام المنصة أو حجز أي جلسة استشارية.</p>
+        <p>باستخدامك للمنصة، فأنت توافق على الالتزام بهذه الشروط كاملة. إذا لم توافق على أي بند منها، فيرجى الامتناع عن استخدام الخدمة.</p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">2</span>
+        <h2 class="text-2xl font-black text-slate-900">وصف الخدمات</h2>
+      </div>
+      <div class="text-slate-600 leading-9 space-y-3">
+        <p>توفر المنصة وسيلة للتواصل والحجز بين المستخدمين والمستشارين المعتمدين في مجالات:</p>
+        <ul class="space-y-2">
+          <li>• الاستشارات النفسية والدعم العاطفي</li>
+          <li>• الاستشارات المهنية وتطوير المسار الوظيفي</li>
+          <li>• برامج تطوير الذات المتكاملة</li>
+        </ul>
+        <p>تعمل المنصة كوسيط منظّم للجلسات عن بُعد عبر الفيديو، وتتولى ترتيب المواعيد وتسهيل التواصل — بينما تبقى المسؤولية المهنية عن محتوى الجلسة والإرشاد المقدم على عاتق المستشار المتخصص الذي تعامل معه.</p>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border-2 border-rose-200">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl bg-rose-500 grid place-items-center text-white text-xl font-black shadow-lg shadow-rose-500/30">3</span>
+        <h2 class="text-2xl font-black text-slate-900">تنبيه مهم: الخدمة ليست بديلاً عن الطوارئ</h2>
+      </div>
+      <div class="text-slate-600 leading-9 space-y-3">
+        <p>الجلسات المقدمة عبر المنصة هي استشارات دعم وتطوير، و<strong>ليست خدمة طبية طارئة ولا بديلاً عن العلاج النفسي المتخصص في الحالات الحرجة.</strong></p>
+        <div class="bg-rose-50 border border-rose-100 rounded-xl p-4 text-rose-800 font-bold">
+          🚨 إذا كنت تمر ب أزمة نفسية حادة، أو لديك أفكار لإيذاء نفسك أو الآخرين — يرجى التوجه فوراً إلى أقرب طوارئ طبية، أو الاتصال بخط الدعم النفسي الطارئ في بلدك.
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">4</span>
+        <h2 class="text-2xl font-black text-slate-900">الحجز والمواعيد</h2>
+      </div>
+      <div class="text-slate-600 leading-9 space-y-3">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-violet-100 text-violet-600 grid place-items-center shrink-0 mt-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>يتم الحجز عبر نموذج المنصة أو قنوات التواصل الرسمية، ويُعد مؤكداً بعد تأكيدنا لك عبر الجوال أو البريد.</li>
+          <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-violet-100 text-violet-600 grid place-items-center shrink-0 mt-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>يُنصح بالانضمام لغرفة الجلسة قبل موعدها بـ 5 دقائق لضمان سير الجلسة كاملة.</li>
+          <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-violet-100 text-violet-600 grid place-items-center shrink-0 mt-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>في حال تأخرك أكثر من 15 دقيقة دون إشعار، يحق للمستشار اعتبار الجلسة ملغاة.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">5</span>
+        <h2 class="text-2xl font-black text-slate-900">سياسة الإلغاء وتعديل المواعيد</h2>
+      </div>
+      <div class="text-slate-600 leading-9 space-y-3">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3"><span class="text-emerald-500 mt-1">✅</span><span><strong>إلغاء مجاني كامل</strong> أو تعديل للموعد عند الإبلاغ قبل 24 ساعة على الأقل من موعد الجلسة.</span></li>
+          <li class="flex items-start gap-3"><span class="text-amber-500 mt-1">⏳</span><span>الإلغاء خلال أقل من 24 ساعة قد يخضع لرسوم تصل إلى <strong>50%</strong> من قيمة الجلسة — تحفظ حقوق المستشار الذي خصص وقته.</span></li>
+          <li class="flex items-start gap-3"><span class="text-rose-500 mt-1">❌</span><span>عدم الحضور دون إبلاغ (No-show) لا يسترد قيمة الجلسة.</span></li>
+        </ul>
+        <p>للإلغاء أو التعديل: راسلنا على واتساب أو البريد الموضحين أدناه.</p>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">6</span>
+        <h2 class="text-2xl font-black text-slate-900">الجلسة المجانية الأولى</h2>
+      </div>
+      <div class="text-slate-600 leading-9">
+        <ul class="space-y-3">
+          <li>• الجلسة التعريفية الأولى مجانية ومدتها <strong>20 دقيقة</strong>، وهدفها التعارف وتحديد الملاءمة قبل الالتزام.</li>
+          <li>• تُمنح الجلسة المجانية <strong>مرة واحدة لكل مستخدم جديد</strong>.</li>
+          <li>• لا تتطلب أي بيانات دفع ولا التزام بشراء أي باقة.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">7</span>
+        <h2 class="text-2xl font-black text-slate-900">الرسوم والدفع</h2>
+      </div>
+      <div class="text-slate-600 leading-9 space-y-3">
+        <p>تُحدد أسعار الجلسات والباقات بوضوح على صفحة الأسعار في المنصة، وجميعها بالريال السعودي ما لم يُذكر خلاف ذلك.</p>
+        <ul class="space-y-2">
+          <li>• تُدفع الرسوم مقدماً قبل موعد الجلسة عبر وسائل الدفع المعتمدة.</li>
+          <li>• اشتراكات الباقات الشهرية تُجدّد تلقائياً ويمكن إلغاؤها قبل موعد التجديد.</li>
+          <li>• نحتفظ بحق تعديل الأسعار مستقبلاً، مع إشعار مسبق للمشتركين الحاليين.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">8</span>
+        <h2 class="text-2xl font-black text-slate-900">التزامات المستخدم</h2>
+      </div>
+      <div class="text-slate-600 leading-9">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3"><span class="text-rose-500 mt-1">✖</span><span>تقديم معلومات صحيحة عند الحجز، والالتزام بالمواعيد المتفق عليها.</span></li>
+          <li class="flex items-start gap-3"><span class="text-rose-500 mt-1">✖</span><span>عدم تسجيل الجلسات صوتياً أو بصرياً من أي طرف دون موافقة خطية من المستشار.</span></li>
+          <li class="flex items-start gap-3"><span class="text-rose-500 mt-1">✖</span><span>عدم استخدام المنصة لأي غرض غير قانوني، أو إساءة معاملة المستشارين لفظياً أو سلوكياً.</span></li>
+          <li class="flex items-start gap-3"><span class="text-rose-500 mt-1">✖</span><span>عدم انتحال شخصية الغير أو حجز الجلسات بالأسماء الوهمية.</span></li>
+        </ul>
+        <p class="mt-3">يحق للمنصة إيقاف حساب أي مستخدم يخالف هذه الالتزامات دون إشعار مسبق.</p>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">9</span>
+        <h2 class="text-2xl font-black text-slate-900">الملكية الفكرية</h2>
+      </div>
+      <div class="text-slate-600 leading-9">
+        <p>جميع عناصر المنصة — بما فيها الشعار والتصميم والنصوص والمحتوى التعليمي — ملكية فكرية محمية لمنصة استشِرني. يُمنع نسخها أو إعادة نشرها أو استخدامها تجارياً دون إذن كتابي مسبق.</p>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">10</span>
+        <h2 class="text-2xl font-black text-slate-900">حدود المسؤولية</h2>
+      </div>
+      <div class="text-slate-600 leading-9 space-y-3">
+        <p>نسعى لتقديم خدمة موثوقة وبدون انقطاع، لكن:</p>
+        <ul class="space-y-2">
+          <li>• لا نضمن استمرارية الخدمة دون انقطاع تقني، ولا نتحمل مسؤولية الأعطال الناتجة عن اتصالك بالإنترنت أو جهازك.</li>
+          <li>• لا تُعد مخرجات الجلسات استشارة قانونية أو طبية أو مالية، والقرارات التي تتخذها بناءً عليها تبقى مسؤوليتك الشخصية.</li>
+          <li>• تقتصر مسؤوليتنا الإجمالية، في أقصى حدود القانون، على قيمة ما دفعته مقابل الجلسة محل الشكوى.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">11</span>
+        <h2 class="text-2xl font-black text-slate-900">تعديل الشروط</h2>
+      </div>
+      <div class="text-slate-600 leading-9">
+        <p>نحتفظ بحق تحديث هذه الشروط من وقت لآخر. سيُنشر تاريخ "آخر تحديث" أعلى الصفحة عند كل تعديل، ويُعد استمرار استخدامك للمنصة بعد التعديل موافقة على الشروط الجديدة.</p>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section class="reveal bg-white rounded-2xl p-8 shadow-soft border border-gray-100">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-12 h-12 shrink-0 rounded-2xl brand-gradient grid place-items-center text-white text-xl font-black shadow-lg shadow-violet-500/25">12</span>
+        <h2 class="text-2xl font-black text-slate-900">التواصل بخصوص الشروط</h2>
+      </div>
+      <div class="text-slate-600 leading-9">
+        <p>أي استفسار حول هذه الشروط أو شكوى متعلقة بالخدمة؟ يسعدنا تواصلك:</p>
+        <div class="mt-5 flex flex-col sm:flex-row gap-3">
+          <a href="mailto:zakidasouki096@gmail.com" class="flex-1 inline-flex items-center justify-center gap-2.5 rounded-xl border-2 border-violet-200 text-violet-700 font-black py-3 hover:border-violet-600 hover:bg-violet-50 transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+            <span dir="ltr">zakidasouki096@gmail.com</span>
+          </a>
+          <a href="https://wa.me/963952504078" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white font-black py-3 rounded-xl shadow-lg shadow-emerald-600/25 hover:brightness-110 transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            واتساب
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- رابط متعلق -->
+    <div class="reveal text-center pt-2">
+      <a href="privacy.html" class="inline-flex items-center gap-2 text-violet-700 font-black hover:underline underline-offset-4">
+        اقرأ أيضاً: سياسة الخصوصية
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- ══════════ التذييل ══════════ -->
+<footer class="bg-slate-900 text-slate-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div>
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="bg-white rounded-2xl p-1 ring-1 ring-white/20 shrink-0">
+            <img src="https://i.postimg.cc/BbtD3P0j/Gemini-Generated-Image-u4tgiau4tgiau4tg.jpg" alt="لوغو استشِرني" class="w-12 h-12 object-contain rounded-xl">
+          </span>
+          <span class="text-2xl font-black text-white">استشِرني</span>
+        </a>
+        <p class="mt-5 text-sm leading-8 text-slate-400">منصة عربية تجمع أفضل المستشارين المعتمدين في مجال الصحة النفسية والتطوير المهني، لتحصل على الدعم الذي تستحقه — من أي مكان، وفي أي وقت.</p>
+        <div class="flex items-center gap-3 mt-6">
+          <a href="https://wa.me/963952504078" target="_blank" rel="noopener" aria-label="واتساب" class="w-10 h-10 rounded-full bg-white/10 grid place-items-center hover:bg-[#25D366] hover:text-white transition-all duration-300">
+            <svg class="w-4.5 h-4.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="mailto:zakidasouki096@gmail.com" aria-label="البريد" class="w-10 h-10 rounded-full bg-white/10 grid place-items-center hover:brand-gradient hover:text-white transition-all duration-300">
+            <svg class="w-4.5 h-4.5" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-lg">روابط سريعة</h4>
+        <ul class="mt-5 space-y-3 text-sm font-semibold">
+          <li><a href="index.html" class="text-slate-400 hover:text-gold-400 transition-colors">الرئيسية</a></li>
+          <li><a href="index.html#services" class="text-slate-400 hover:text-gold-400 transition-colors">خدماتنا</a></li>
+          <li><a href="index.html#how" class="text-slate-400 hover:text-gold-400 transition-colors">كيف نعمل</a></li>
+          <li><a href="index.html#pricing" class="text-slate-400 hover:text-gold-400 transition-colors">الأسعار</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-lg">قانوني</h4>
+        <ul class="mt-5 space-y-3 text-sm font-semibold">
+          <li><a href="privacy.html" class="text-slate-400 hover:text-gold-400 transition-colors">سياسة الخصوصية</a></li>
+          <li><a href="terms.html" class="text-slate-400 hover:text-gold-400 transition-colors">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-lg">تواصل معنا</h4>
+        <ul class="mt-5 space-y-4 text-sm font-semibold">
+          <li class="flex items-center gap-3 text-slate-400">
+            <span class="w-9 h-9 rounded-lg bg-white/10 grid place-items-center text-violet-300 shrink-0"><svg class="w-4.5 h-4.5" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 6-8 11-8 11s-8-5-8-11a8 8 0 1116 0z"/><circle cx="12" cy="10.5" r="2.8"/></svg></span>
+            سوريا · عن بُعد
+          </li>
+          <li class="flex items-center gap-3 text-slate-400">
+            <span class="w-9 h-9 rounded-lg bg-white/10 grid place-items-center text-violet-300 shrink-0"><svg class="w-4.5 h-4.5" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span>
+            <a href="tel:+963952504078" class="hover:text-white transition-colors"><span dir="ltr">+963 952 504 078</span></a>
+          </li>
+          <li class="flex items-center gap-3 text-slate-400">
+            <span class="w-9 h-9 rounded-lg bg-white/10 grid place-items-center text-violet-300 shrink-0"><svg class="w-4.5 h-4.5" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
+            <a href="mailto:zakidasouki096@gmail.com" class="hover:text-white transition-colors"><span dir="ltr">zakidasouki096@gmail.com</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-14 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <p>© 2025 منصة <span class="text-slate-300 font-bold">استشِرني</span> — جميع الحقوق محفوظة.</p>
+      <div class="flex items-center gap-6 font-semibold">
+        <a href="privacy.html" class="hover:text-gold-400 transition-colors">سياسة الخصوصية</a>
+        <a href="terms.html" class="hover:text-gold-400 transition-colors">الشروط والأحكام</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- زر العودة للأعلى -->
+<button x-show="showTop" x-cloak x-transition
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="العودة للأعلى"
+        class="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full brand-gradient text-white shadow-lg shadow-violet-900/40 grid place-items-center hover:-translate-y-1 transition-all duration-300">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+/* تأثير الظهور التدريجي عند التمرير */
+document.addEventListener('DOMContentLoaded', () => {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+});
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

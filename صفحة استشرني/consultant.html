@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملف المستشار — استشِرني</title>
+<link rel="icon" type="image/png" href="https://i.postimg.cc/BbtD3P0j/Gemini-Generated-Image-u4tgiau4tgiau4tg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { cairo: ['Cairo','sans-serif'] },
+  colors: {
+    primary: {50:'#F5F3FF',100:'#EDE9FE',200:'#DDD6FE',400:'#A78BFA',500:'#8B5CF6',600:'#7C3AED',700:'#6D28D9',900:'#4C1D95'},
+    gold: {400:'#FBBF24',500:'#F59E0B'}
+  },
+  boxShadow: { soft:'0 8px 30px rgba(76,29,149,.08)', lift:'0 24px 50px -12px rgba(76,29,149,.22)' }
+}}}
+</script>
+<style>
+  html{scroll-behavior:smooth} body{overflow-x:hidden}
+  ::selection{background:#7C3AED;color:#fff}
+  .brand-gradient{background-image:linear-gradient(135deg,#7C3AED 0%,#2563EB 100%)}
+  .hero-gradient{background-image:linear-gradient(150deg,#4C1D95 0%,#6D28D9 38%,#2563EB 100%)}
+  @keyframes softPing{0%{transform:scale(1);opacity:.7}80%,100%{transform:scale(2.8);opacity:0}}
+  .pulse-dot{position:relative}
+  .pulse-dot::before{content:'';position:absolute;inset:0;border-radius:9999px;background:#22C55E;animation:softPing 1.6s cubic-bezier(0,0,.2,1) infinite}
+</style>
+</head>
+
+<body class="font-cairo text-slate-800 bg-gray-50 antialiased" x-data="consultantPage()" @scroll.window="showTop=window.scrollY>600">
+
+<!-- الترويسة الموحّدة -->
+<nav class="fixed top-0 inset-x-0 z-50 transition-all duration-300" x-data="{scrolled:false}" @scroll.window="scrolled=window.scrollY>40"
+     :class="scrolled ? 'bg-white/95 backdrop-blur-md shadow-soft py-2.5' : 'bg-transparent py-4'">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+      <span class="bg-white rounded-2xl p-1 shadow-md ring-1 ring-slate-200"><img src="https://i.postimg.cc/BbtD3P0j/Gemini-Generated-Image-u4tgiau4tgiau4tg.jpg" alt="لوغو" class="w-11 h-11 object-contain rounded-xl"></span>
+      <span class="text-2xl font-black" :class="scrolled ? 'brand-gradient bg-clip-text text-transparent' : 'text-white'">استشِرني</span>
+    </a>
+    <div class="hidden lg:flex items-center gap-7 text-sm font-bold">
+      <a href="index.html" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">الرئيسية</a>
+      <a href="index.html#services" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">الخدمات</a>
+      <a href="consultants.html" class="text-gold-500">المستشارون</a>
+      <a href="index.html#pricing" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">الأسعار</a>
+      <a href="contact.html" :class="scrolled ? 'text-slate-600 hover:text-violet-600' : 'text-white/85 hover:text-white'">تواصل معنا</a>
+    </div>
+    <div class="hidden lg:flex items-center gap-2.5">
+      <a href="login.html" class="text-sm font-bold px-5 py-2.5 rounded-xl transition-all"
+         :class="scrolled ? 'text-violet-700 ring-2 ring-violet-200 hover:bg-violet-50' : 'text-white ring-1 ring-white/40 hover:bg-white/10'">تسجيل الدخول</a>
+      <a href="index.html#booking" class="brand-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-violet-950/30 hover:brightness-110 transition-all">احجز جلستك</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ بطاقة المستشار ══════════ -->
+<header class="relative hero-gradient pt-32 pb-24">
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white/10 blur-3xl"></div>
+    <div class="absolute -bottom-28 -right-16 w-80 h-80 rounded-full bg-gold-400/15 blur-3xl"></div>
+  </div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+    <nav class="flex items-center justify-center gap-2 text-sm font-bold text-violet-200">
+      <a href="index.html" class="hover:text-white transition-colors">الرئيسية</a>
+      <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg>
+      <a href="consultants.html" class="hover:text-white transition-colors">المستشارون</a>
+      <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg>
+      <span class="text-white" x-text="c.name"></span>
+    </nav>
+    <div class="relative w-32 h-32 mx-auto mt-8">
+      <img :src="photoOf(c)" :alt="c.name" class="w-full h-full rounded-full object-cover ring-4 ring-white/70 shadow-2xl">
+      <span class="absolute -bottom-1 right-0 w-9 h-9 rounded-full bg-white grid place-items-center text-emerald-500 ring-2 ring-emerald-100" title="موثّق">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </span>
+    </div>
+    <h1 class="mt-5 text-3xl sm:text-4xl font-black text-white" x-text="c.name"></h1>
+    <p class="mt-2 text-lg font-bold text-violet-200" x-text="c.title"></p>
+    <div class="flex items-center justify-center gap-3 mt-4 flex-wrap">
+      <span class="text-xs font-black px-4 py-1.5 rounded-full" :class="CAT_META[c.cat].chip" x-text="c.cat"></span>
+      <span class="text-xs font-black px-4 py-1.5 rounded-full bg-white/10 text-white ring-1 ring-white/25" x-text="'📍 '+c.city"></span>
+      <span x-show="c.avail" class="inline-flex items-center gap-1.5 text-xs font-black px-4 py-1.5 rounded-full bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/30">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> متاح الآن
+      </span>
+    </div>
+    <!-- التقييم بالنجوم -->
+    <div class="flex items-center justify-center gap-2 mt-5">
+      <div class="flex gap-0.5">
+        <template x-for="i in 5" :key="i">
+          <svg class="w-5 h-5" :class="i <= Math.round(c.rating) ? 'text-gold-400' : 'text-white/25'" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </template>
+      </div>
+      <span class="text-white font-black" x-text="c.rating"></span>
+      <span class="text-violet-200 text-sm font-bold" x-text="'('+c.reviews+' مراجعة موثقة)'"></span>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ المحتوى ══════════ -->
+<main class="max-w-5xl mx-auto px-4 sm:px-6 -mt-14 pb-24 relative z-10">
+  <div class="grid lg:grid-cols-3 gap-7 items-start">
+
+    <!-- العمود الرئيسي -->
+    <div class="lg:col-span-2 space-y-7">
+      <!-- الإحصائيات -->
+      <div class="bg-white rounded-2xl shadow-soft border border-gray-100 p-6 grid grid-cols-3 text-center">
+        <div><p class="text-2xl font-black text-violet-700" x-text="'+'+c.years"></p><p class="text-xs font-bold text-slate-400 mt-1">سنة خبرة</p></div>
+        <div class="border-x border-gray-100"><p class="text-2xl font-black text-blue-600" x-text="c.sessions"></p><p class="text-xs font-bold text-slate-400 mt-1">جلسة ناجحة</p></div>
+        <div><p class="text-2xl font-black text-gold-500" x-text="c.rating"></p><p class="text-xs font-bold text-slate-400 mt-1">تقييم / 5</p></div>
+      </div>
+
+      <!-- النبذة -->
+      <section class="bg-white rounded-2xl shadow-soft border border-gray-100 p-7">
+        <h2 class="text-xl font-black text-slate-900 flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-xl bg-violet-100 grid place-items-center text-violet-600 shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5"/></svg></span>
+          نبذة عن المستشار
+        </h2>
+        <p class="text-slate-600 leading-9 mt-4" x-text="c.about"></p>
+        <p class="text-slate-600 leading-9 mt-3">يعمل <span class="font-black" x-text="c.name"></span> ضمن شبكة مستشاري استشِرني المعتمدين، والتزم بمعايير السرية المهنية الكاملة، وتخضع جودته لتقييم دوري من العملاء ومن فريق المنصة. الجلسات تُعقد عبر فيديو مشفّر من متصفحك مباشرة، دون تحميل أي تطبيق.</p>
+      </section>
+
+      <!-- مجالات التخصص -->
+      <section class="bg-white rounded-2xl shadow-soft border border-gray-100 p-7">
+        <h2 class="text-xl font-black text-slate-900 flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-xl bg-blue-100 grid place-items-center text-blue-600 shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 009.59 3.24H4a1 1 0 00-1 1v5.59c0 .53.21 1.04.59 1.41l9.58 9.59a2 2 0 002.83 0l4.59-4.59a2 2 0 000-2.83z"/><circle cx="7.5" cy="7.5" r="1" fill="currentColor"/></svg></span>
+          مجالات التخصص
+        </h2>
+        <div class="flex flex-wrap gap-2.5 mt-5">
+          <template x-for="s in c.sp" :key="s">
+            <span class="bg-violet-50 text-violet-700 text-sm font-black px-4 py-2 rounded-xl" x-text="s"></span>
+          </template>
+        </div>
+      </section>
+
+      <!-- ماذا يحدث في الجلسة -->
+      <section class="bg-white rounded-2xl shadow-soft border border-gray-100 p-7">
+        <h2 class="text-xl font-black text-slate-900 flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-xl bg-amber-100 grid place-items-center text-amber-600 shrink-0"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>
+          ماذا يحدث في جلستك الأولى؟
+        </h2>
+        <ul class="mt-5 space-y-3.5 text-slate-600 font-semibold">
+          <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 grid place-items-center shrink-0 mt-0.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>مدة 20 دقيقة مجانية بالكامل — تعارف وتحديد الملاءمة، دون أي دفع.</li>
+          <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 grid place-items-center shrink-0 mt-0.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>يصغي إليك أولاً، ثم يشرح خطة العمل المقترحة لحالتك بوضوح.</li>
+          <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 grid place-items-center shrink-0 mt-0.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>تقرر بحرية كاملة: تكمل معه، أو تجرب مستشاراً آخر، أو تنسحب.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- العمود الجانبي: بطاقة الحجز -->
+    <aside class="lg:sticky lg:top-24 space-y-5">
+      <div class="bg-white rounded-2xl shadow-lift border-2 border-violet-200 p-7 text-center">
+        <p class="text-sm font-bold text-slate-400">سعر الجلسة (45 دقيقة)</p>
+        <p class="mt-2"><span class="text-4xl font-black text-slate-900" x-text="c.price"></span><span class="text-sm font-bold text-slate-400"> ر.س</span></p>
+        <p class="mt-2 inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-black px-3 py-1.5 rounded-full">الجلسة الأولى (20 د) مجانية</p>
+
+        <!-- زر حجز عبر واتساب: يفتح محادثة جاهزة باسم المستشار -->
+        <a :href="'https://wa.me/963952504078?text=' + encodeURIComponent('مرحباً، أرغب بحجز جلسة مع ' + c.name + ' (' + c.cat + ') عبر منصة استشِرني')"
+           target="_blank" rel="noopener"
+           class="mt-5 w-full inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white font-black py-3.5 rounded-xl shadow-lg shadow-emerald-600/25 hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          احجز مع <span x-text="c.name"></span>
+        </a>
+        <a href="index.html#booking" class="mt-3 w-full inline-flex items-center justify-center rounded-xl border-2 border-violet-600 text-violet-700 font-bold py-3 hover:brand-gradient hover:text-white hover:border-transparent transition-all duration-300">احجز عبر النموذج</a>
+        <p class="text-xs text-slate-400 leading-6 mt-4">إلغاء مجاني قبل 24 ساعة · بياناتك مشفّرة · سرية تامة</p>
+      </div>
+
+      <!-- مستشارون مشابهون -->
+      <div class="bg-white rounded-2xl shadow-soft border border-gray-100 p-6">
+        <h3 class="font-black text-slate-900 text-sm">مستشارون من نفس التخصص</h3>
+        <div class="mt-4 space-y-3">
+          <template x-for="s in similar" :key="s.id">
+            <a :href="'consultant.html?id='+s.id" class="flex items-center gap-3 rounded-xl p-2.5 hover:bg-violet-50 transition-colors group">
+              <img :src="photoOf(s)" :alt="s.name" loading="lazy" class="w-11 h-11 rounded-full object-cover ring-2" :class="CAT_META[s.cat].ring">
+              <div class="flex-1 min-w-0">
+                <p class="font-black text-sm text-slate-800 group-hover:text-violet-700 truncate" x-text="s.name"></p>
+                <p class="text-xs font-bold text-slate-400 truncate" x-text="s.title"></p>
+              </div>
+              <span class="text-xs font-black text-gold-500 shrink-0" x-text="'★ '+s.rating"></span>
+            </a>
+          </template>
+        </div>
+        <a href="consultants.html" class="mt-4 block text-center text-violet-700 font-black text-sm hover:underline underline-offset-4">عرض كل المستشارين ←</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- التذييل المختصر -->
+<footer class="bg-slate-900 text-slate-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-5">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <span class="bg-white rounded-2xl p-1 ring-1 ring-white/20"><img src="https://i.postimg.cc/BbtD3P0j/Gemini-Generated-Image-u4tgiau4tgiau4tg.jpg" alt="لوغو" class="w-10 h-10 object-contain rounded-xl"></span>
+      <span class="text-xl font-black text-white">استشِرني</span>
+    </a>
+    <div class="flex items-center gap-6 text-sm font-semibold">
+      <a href="consultants.html" class="text-slate-400 hover:text-gold-400 transition-colors">المستشارون</a>
+      <a href="privacy.html" class="text-slate-400 hover:text-gold-400 transition-colors">الخصوصية</a>
+      <a href="terms.html" class="text-slate-400 hover:text-gold-400 transition-colors">الشروط</a>
+      <a href="contact.html" class="text-slate-400 hover:text-gold-400 transition-colors">تواصل</a>
+    </div>
+    <p class="text-sm text-slate-500">© 2025 استشِرني — جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<button x-show="showTop" x-cloak x-transition @click="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى"
+        class="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full brand-gradient text-white shadow-lg shadow-violet-900/40 grid place-items-center hover:-translate-y-1 transition-all duration-300">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script src="data.js"></script>
+<script>
+function consultantPage() {
+  /* قراءة رقم المستشار من الرابط: consultant.html?id=7 */
+  const id = parseInt(new URLSearchParams(location.search).get('id'), 10);
+  const c = CONSULTANTS.find(x => x.id === id) || CONSULTANTS[0];
+  return {
+    c, CAT_META, photoOf, showTop:false,
+    /* 3 مستشارين مشابهين من نفس التخصص */
+    similar: CONSULTANTS.filter(x => x.cat === c.cat && x.id !== c.id).slice(0, 3)
+  }
+}
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
